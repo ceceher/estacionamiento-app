@@ -6,7 +6,7 @@ const NavBar = () => {
 
   return (
     <nav>
-      <a className="NavBar">Estacionamiento</a>
+      <a className="NavBar header-wrap">Estacionamiento</a>
     </nav>
   );
 };

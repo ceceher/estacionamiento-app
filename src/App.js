@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar />
-        <Form />
+        <main>
+          <Form />
+        </main>
       </React.Fragment>
     );
   }

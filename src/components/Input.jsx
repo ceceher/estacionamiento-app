@@ -5,15 +5,15 @@ export default class Input extends Component {
     super(props);
 
     this.state = {
-      className: "form-group",
+      className: "",
     };
   }
 
   render() {
     return (
       <div className={this.state.className}>
-        <label>{this.props.label}</label>
-        <input {...this.props} />
+        <label className="label">{this.props.label}</label>
+        <input {...this.props} className="input" />
       </div>
     );
   }
