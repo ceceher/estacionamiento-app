@@ -17,6 +17,12 @@
       },
       "auth": {
         "estacionamientoappc52622c2a": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2fcht6a5e8bi0",
+          "type": "manual"
+        }
       }
     }
   }

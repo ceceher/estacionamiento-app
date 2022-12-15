@@ -65,6 +65,26 @@
   font-size: 50px;
 }
 
+.cars {
+  border: 2px solid #754a9a;
+  background-color: #d9d9d9;
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 10px;
+}
+th {
+  border-bottom: 1px solid #754a9a;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 10px;
+}
+
+tr {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
 .wrapper {
   display: grid;
   grid-template-areas: repeat(5, 1fr);
@@ -86,7 +106,14 @@
 
 .cost-wrap {
   grid-column: 2 / 5;
-  grid-row: 1;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.table-wrap {
+  grid-column: 1 /5;
+  grid-row: 3;
   align-self: center;
   justify-self: center;
 }
