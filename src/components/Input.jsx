@@ -11,7 +11,7 @@ export default class Input extends Component {
     const className =
       !this.props.touched || this.props.valid ? "input" : "input control-error";
     return (
-      <div className={this.state.className}>
+      <div>
         <label className="label">{this.props.label}</label> <br />
         <input {...this.props} className={className} />
       </div>
