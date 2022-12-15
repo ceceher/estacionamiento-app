@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./styles.css";
 import NavBar from "./components/navbar";
 import Form from "./components/Form";
-import CostBlock from "./components/costBlock";
 
 class App extends Component {
   render() {
@@ -11,7 +10,6 @@ class App extends Component {
         <NavBar />
         <main>
           <Form />
-          <CostBlock />
         </main>
       </React.Fragment>
     );
