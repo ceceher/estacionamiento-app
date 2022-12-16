@@ -16,7 +16,6 @@ class Form extends Component {
         label: "placas",
         defaultValue: "",
         placeholder: "",
-        inputValue: "",
         validationRules: {
           isRequired: true,
           minLenght: 2,
@@ -27,7 +26,6 @@ class Form extends Component {
         label: "color",
         defaultValue: "",
         placeholder: "",
-        inputValue: "",
         validationRules: {
           isRequired: true,
           minLenght: 2,
@@ -38,7 +36,6 @@ class Form extends Component {
         label: "modelo",
         defaultValue: "",
         placeholder: "",
-        inputValue: "",
         validationRules: {
           isRequired: true,
           minLenght: 2,
@@ -49,14 +46,23 @@ class Form extends Component {
 
   handleChange(event) {
     const { name, value } = event.target;
-    const val = event.target.value;
     this.setState({
       ...this.state,
       [name]: { ...this.state.name, value },
     });
   }
 
+  handleRegister() {
+    console.log("Your input value is: " + this.state.defaultValue);
+    //Send state to the server code
+  }
+
   render() {
+    const handleClick = (e) => {
+      e.preventDefault();
+      console.log("Register Clicked");
+    };
+
     return (
       <div className="form form-wrap">
         <Input
@@ -81,7 +87,9 @@ class Form extends Component {
           onChange={this.handleChange}
         />
 
-        <button className="btn">Registrar</button>
+        <button onClick={handleClick} className="btn">
+          Registrar
+        </button>
       </div>
     );
   }

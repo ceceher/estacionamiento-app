@@ -58,11 +58,14 @@
   padding: 15px;
   margin: 10px;
 }
+.btn-Pay:active {
+  background-color: #907f9e;
+}
 
 .cost {
   background-color: #d9d9d9;
   border-radius: 14px;
-  width: 200px;
+  width: 225px;
   height: 100px;
   text-align: center;
   display: block;
@@ -73,7 +76,7 @@
 
 .pay-block {
   border-radius: 14px;
-  width: 200px;
+  width: 225px;
   height: 100px;
   text-align: center;
   display: block;
