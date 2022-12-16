@@ -11,20 +11,24 @@ class Cars extends Component {
     return (
       <div className="cars table-wrap">
         <table>
-          <tr>
-            <th>Placas</th>
-            <th>Modelo</th>
-            <th>Color</th>
-          </tr>
-          {this.state.cars.map((cars, key) => {
-            return (
-              <tr key={key}>
-                <td>{cars.placas}</td>
-                <td>{cars.modelo}</td>
-                <td>{cars.color}</td>
-              </tr>
-            );
-          })}
+          <thead>
+            <tr>
+              <th>Placas</th>
+              <th>Modelo</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.cars.map((cars, key) => {
+              return (
+                <tr key={key}>
+                  <td>{cars.placas}</td>
+                  <td>{cars.modelo}</td>
+                  <td>{cars.color}</td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </div>
     );
