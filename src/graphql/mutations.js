@@ -11,8 +11,15 @@ export const createCars = /* GraphQL */ `
       placas
       modelo
       color
+      fechaEntrada
+      horaEntrada
+      fechaSalida
+      horaSalida
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -26,8 +33,15 @@ export const updateCars = /* GraphQL */ `
       placas
       modelo
       color
+      fechaEntrada
+      horaEntrada
+      fechaSalida
+      horaSalida
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -41,8 +55,15 @@ export const deleteCars = /* GraphQL */ `
       placas
       modelo
       color
+      fechaEntrada
+      horaEntrada
+      fechaSalida
+      horaSalida
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;

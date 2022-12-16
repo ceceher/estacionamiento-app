@@ -8,8 +8,15 @@ export const getCars = /* GraphQL */ `
       placas
       modelo
       color
+      fechaEntrada
+      horaEntrada
+      fechaSalida
+      horaSalida
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -25,10 +32,51 @@ export const listCars = /* GraphQL */ `
         placas
         modelo
         color
+        fechaEntrada
+        horaEntrada
+        fechaSalida
+        horaSalida
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncCars = /* GraphQL */ `
+  query SyncCars(
+    $filter: ModelCarsFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncCars(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        placas
+        modelo
+        color
+        fechaEntrada
+        horaEntrada
+        fechaSalida
+        horaSalida
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
     }
   }
 `;

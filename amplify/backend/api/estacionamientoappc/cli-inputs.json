@@ -10,8 +10,16 @@
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
-        "type": "NONE"
-      }
+        "type": "AUTOMERGE"
+      },
+      "perModelResolutionStrategy": [
+        {
+          "resolutionStrategy": {
+            "type": "OPTIMISTIC_CONCURRENCY"
+          },
+          "entityName": "Cars"
+        }
+      ]
     },
     "additionalAuthTypes": [
       {
