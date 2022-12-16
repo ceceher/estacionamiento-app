@@ -8,7 +8,7 @@ class CostCard extends Component {
   state = {};
   render() {
     return (
-      <div className="cost cost-wrap">
+      <div className="cost">
         <label className="label">Costo</label>
         <CostValue />
       </div>

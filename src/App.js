@@ -4,7 +4,7 @@ import awsconfig from "./aws-exports";
 import "./styles.css";
 import NavBar from "./components/navbar";
 import Form from "./components/Form";
-import CostCard from "./components/costCard";
+import PayCost from "./components/payCost";
 import Cars from "./components/cars";
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
         <NavBar />
         <main>
           <Form />
-          <CostCard />
+          <PayCost />
           <Cars />
         </main>
       </React.Fragment>
