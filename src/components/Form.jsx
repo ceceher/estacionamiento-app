@@ -65,7 +65,6 @@ class Form extends Component {
           label={this.state.placas.label}
           defaultValue={this.state.placas.defaultValue}
           onChange={this.handleChange}
-          value={this.state.placas.inputValue}
         />
         <Input
           name={this.state.modelo.name}
@@ -73,7 +72,6 @@ class Form extends Component {
           label={this.state.modelo.label}
           defaultValue={this.state.modelo.defaultValue}
           onChange={this.handleChange}
-          value={this.state.modelo.inputValue}
         />
         <Input
           name={this.state.color.name}
@@ -81,19 +79,9 @@ class Form extends Component {
           label={this.state.color.label}
           defaultValue={this.state.color.defaultValue}
           onChange={this.handleChange}
-          value={this.state.color.inputValue}
         />
 
-        <button
-          onClick={carAdd(
-            this.state.placas.value,
-            this.state.modelo.value,
-            this.state.color.value
-          )}
-          className="btn"
-        >
-          Registrar
-        </button>
+        <button className="btn">Registrar</button>
       </div>
     );
   }
