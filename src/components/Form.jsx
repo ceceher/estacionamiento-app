@@ -1,96 +1,76 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import Input from "./Input";
-import validate from "../helpers/validations";
 
 import { DataStore } from "@aws-amplify/datastore";
 import { Cars } from "../models";
 
 const carAdd = async (values) => await DataStore.save(new Cars({ ...values }));
 
+const inputParsers = {
+  uppercase(input) {
+    return input.toUpperCase();
+  },
+};
+
 class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      placas: {
-        name: "placasInp",
-        label: "placas",
-        defaultValue: "",
-        placeholder: "",
-        validationRules: {
-          isRequired: true,
-          minLenght: 2,
-        },
-      },
-      color: {
-        name: "colorInp",
-        label: "color",
-        defaultValue: "",
-        placeholder: "",
-        validationRules: {
-          isRequired: true,
-          minLenght: 2,
-        },
-      },
-      modelo: {
-        name: "modeloInp",
-        label: "modelo",
-        defaultValue: "",
-        placeholder: "",
-        validationRules: {
-          isRequired: true,
-          minLenght: 2,
-        },
-      },
+      placas: "",
+      modelo: "",
+      color: "",
     };
+    this.inputElement = React.createRef();
+    this.handleChange = this.handleChange.bind(this);
+    this.handleRegister = this.handleRegister.bind(this);
   }
 
-  handleChange(event) {
-    const { name, value } = event.target;
-    this.setState({
-      ...this.state,
-      [name]: { ...this.state.name, value },
-    });
-  }
+  handleChange = (event) => {
+    const {
+      target: { name, value },
+    } = event;
+    this.setState({ [name]: value });
+    console.log(value);
+  };
 
-  handleRegister() {
-    console.log("Your input value is: " + this.state.defaultValue);
-    //Send state to the server code
+  handleRegister(e) {
+    e.preventDefault();
+
+    console.log(this.state.placas, this.state.modelo, this.state.color);
   }
 
   render() {
-    const handleClick = (e) => {
-      e.preventDefault();
-      console.log("Register Clicked");
-    };
-
     return (
-      <div className="form form-wrap">
+      <form onSubmit={this.handleRegister} className="form form-wrap">
         <Input
-          name={this.state.placas.name}
-          placeholder={this.state.placas.placeholder}
-          label={this.state.placas.label}
-          defaultValue={this.state.placas.defaultValue}
+          ref={this.inputElement}
+          type={"text"}
+          name={"placasInp"}
+          label={"placas"}
           onChange={this.handleChange}
+          defaultValue={this.state.placas}
         />
         <Input
-          name={this.state.modelo.name}
-          placeholder={this.state.modelo.placeholder}
-          label={this.state.modelo.label}
-          defaultValue={this.state.modelo.defaultValue}
+          ref={this.inputElement}
+          type={"text"}
+          name={"modeloInp"}
+          label={"modelo"}
           onChange={this.handleChange}
+          defaultValue={this.state.modelo}
         />
         <Input
-          name={this.state.color.name}
-          placeholder={this.state.color.placeholder}
-          label={this.state.color.label}
-          defaultValue={this.state.color.defaultValue}
+          ref={this.inputElement}
+          type={"text"}
+          name={"colorInp"}
+          label={"color"}
           onChange={this.handleChange}
+          defaultValue={this.state.color}
         />
 
-        <button onClick={handleClick} className="btn">
+        <button type="submit" className="btn">
           Registrar
         </button>
-      </div>
+      </form>
     );
   }
 }
