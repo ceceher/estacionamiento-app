@@ -21,23 +21,28 @@ class Form extends Component {
       color: "",
     };
     this.inputElement = React.createRef();
-    this.handleChange = this.handleChange.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = (event) => {
+  handleChange(event) {
     const {
       target: { name, value },
     } = event;
-    this.setState({ [name]: value });
-    console.log(value);
-  };
-
-  handleRegister(e) {
-    e.preventDefault();
-
-    console.log(this.state.placas, this.state.modelo, this.state.color);
+    this.setState(
+      {
+        [name]: value,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   }
+
+  handleRegister = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+  };
 
   render() {
     return (
@@ -45,7 +50,7 @@ class Form extends Component {
         <Input
           ref={this.inputElement}
           type={"text"}
-          name={"placasInp"}
+          name={"placas"}
           label={"placas"}
           onChange={this.handleChange}
           defaultValue={this.state.placas}
@@ -53,7 +58,7 @@ class Form extends Component {
         <Input
           ref={this.inputElement}
           type={"text"}
-          name={"modeloInp"}
+          name={"modelo"}
           label={"modelo"}
           onChange={this.handleChange}
           defaultValue={this.state.modelo}
@@ -61,7 +66,7 @@ class Form extends Component {
         <Input
           ref={this.inputElement}
           type={"text"}
-          name={"colorInp"}
+          name={"color"}
           label={"color"}
           onChange={this.handleChange}
           defaultValue={this.state.color}
