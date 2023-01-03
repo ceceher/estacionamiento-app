@@ -1,11 +1,15 @@
 import React, { Component } from "react";
-import { Amplify, Auth } from "aws-amplify";
-import awsconfig from "./aws-exports";
+import { Amplify } from "@aws-amplify/core";
+import awsconfig from "../src/aws-exports.js";
 import "./styles.css";
 import NavBar from "./components/navbar";
 import Form from "./components/Form";
 import PayCost from "./components/payCost";
 import Cars from "./components/cars";
+import { DataStore } from "aws-amplify";
+
+Amplify.configure(awsconfig);
+DataStore.configure(awsconfig);
 
 class App extends Component {
   render() {

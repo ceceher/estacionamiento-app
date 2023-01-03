@@ -24,5 +24,5 @@ Input.defaultProps = {
   label: "",
   name: "input",
   placehoder: "",
-  defaultValue: "",
+  value: "",
 };

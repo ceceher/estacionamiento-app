@@ -17,42 +17,46 @@ class Form extends Component {
     this.inputElement = React.createRef();
     this.handleRegister = this.handleRegister.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleChange(event) {
     const {
       target: { name, value },
     } = event;
-    this.setState(
-      {
-        [name]: value.toUpperCase(),
-      }
-      // () => {
-      //   console.log(this.state);
-      // }
-    );
+    this.setState({
+      [name]: value.toUpperCase(),
+    });
   }
+
+  handleReset = () => {
+    Array.from(document.querySelectorAll("input")).forEach(
+      (input) => (input.value = "")
+    );
+    this.setState({
+      placas: "",
+      modelo: "",
+      color: "",
+    });
+  };
 
   handleRegister = async (e) => {
     e.preventDefault();
     const { placas, modelo, color } = this.state;
 
-    console.log(
-      placas,
-      modelo,
-      color,
-      moment().format("YYYY-MM-DDThh:mm:ss.sssZ")
-    );
+    console.log(placas, modelo, color, moment().format("YYYY-MM-DD hh:mm:ss"));
 
     await DataStore.save(
       new Cars({
         placas: placas,
         modelo: modelo,
         color: color,
-        fechaEntrada: moment().format("YYYY-MM-DDThh:mm:ss.sssZ"),
+        fechaEntrada: moment().format("YYYY-MM-DD hh:mm:ss"),
         fechaSalida: "",
       })
     );
+
+    this.handleReset();
   };
 
   render() {
@@ -64,7 +68,7 @@ class Form extends Component {
           name={"placas"}
           label={"placas"}
           onChange={this.handleChange}
-          defaultValue={this.state.placas}
+          value={this.state.placas}
         />
         <Input
           ref={this.inputElement}
@@ -72,7 +76,7 @@ class Form extends Component {
           name={"modelo"}
           label={"modelo"}
           onChange={this.handleChange}
-          defaultValue={this.state.modelo}
+          value={this.state.modelo}
         />
         <Input
           ref={this.inputElement}
@@ -80,7 +84,7 @@ class Form extends Component {
           name={"color"}
           label={"color"}
           onChange={this.handleChange}
-          defaultValue={this.state.color}
+          value={this.state.color}
         />
 
         <button type="submit" className="btn">
