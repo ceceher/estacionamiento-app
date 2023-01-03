@@ -5,8 +5,8 @@ import "./styles.css";
 import NavBar from "./components/navbar";
 import Form from "./components/Form";
 import PayCost from "./components/payCost";
-import Cars from "./components/cars";
 import { DataStore } from "aws-amplify";
+import TableCars from "./components/cars.jsx";
 
 Amplify.configure(awsconfig);
 DataStore.configure(awsconfig);
@@ -19,7 +19,7 @@ class App extends Component {
         <main>
           <Form />
           <PayCost />
-          <Cars />
+          <TableCars />
         </main>
       </React.Fragment>
     );
