@@ -1,16 +1,10 @@
-import React, { Component, createRef } from "react";
+import React, { Component } from "react";
 import Input from "./Input";
-
 import { DataStore } from "@aws-amplify/datastore";
 import { Cars } from "../models";
+import moment from "moment";
 
-const carAdd = async (values) => await DataStore.save(new Cars({ ...values }));
-
-const inputParsers = {
-  uppercase(input) {
-    return input.toUpperCase();
-  },
-};
+// const carAdd = async (values) => await DataStore.save(new Cars({ ...values }));
 
 class Form extends Component {
   constructor(props) {
@@ -31,17 +25,34 @@ class Form extends Component {
     } = event;
     this.setState(
       {
-        [name]: value,
-      },
-      () => {
-        console.log(this.state);
+        [name]: value.toUpperCase(),
       }
+      // () => {
+      //   console.log(this.state);
+      // }
     );
   }
 
-  handleRegister = (e) => {
+  handleRegister = async (e) => {
     e.preventDefault();
-    console.log(this.state);
+    const { placas, modelo, color } = this.state;
+
+    console.log(
+      placas,
+      modelo,
+      color,
+      moment().format("YYYY-MM-DDThh:mm:ss.sssZ")
+    );
+
+    await DataStore.save(
+      new Cars({
+        placas: placas,
+        modelo: modelo,
+        color: color,
+        fechaEntrada: moment().format("YYYY-MM-DDThh:mm:ss.sssZ"),
+        fechaSalida: "",
+      })
+    );
   };
 
   render() {

@@ -18,7 +18,7 @@
   border-radius: 14px;
   width: fit-content;
   text-align: center;
-  display: inline-block;
+  display: block;
   padding-bottom: 10px;
   margin: 10px;
   margin-left: 20px;
@@ -85,7 +85,7 @@
 }
 
 .payCost-block {
-  display: block;
+  display: inline-block;
   margin: 10px;
 }
 
@@ -98,7 +98,7 @@
   background-color: #d9d9d9;
   width: fit-content;
   margin: 15px;
-  display: flex;
+  display: block;
   padding: 0px;
   float: left;
   display: table;

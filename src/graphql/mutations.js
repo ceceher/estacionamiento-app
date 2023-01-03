@@ -12,9 +12,7 @@ export const createCars = /* GraphQL */ `
       modelo
       color
       fechaEntrada
-      horaEntrada
       fechaSalida
-      horaSalida
       createdAt
       updatedAt
       _version
@@ -34,9 +32,7 @@ export const updateCars = /* GraphQL */ `
       modelo
       color
       fechaEntrada
-      horaEntrada
       fechaSalida
-      horaSalida
       createdAt
       updatedAt
       _version
@@ -56,9 +52,7 @@ export const deleteCars = /* GraphQL */ `
       modelo
       color
       fechaEntrada
-      horaEntrada
       fechaSalida
-      horaSalida
       createdAt
       updatedAt
       _version

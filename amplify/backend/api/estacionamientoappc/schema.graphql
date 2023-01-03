@@ -1,11 +1,8 @@
-type Cars @model @auth(rules: [{allow: public}]) {
+type Cars @model @auth(rules: [{ allow: public }]) {
   id: ID!
   placas: String!
   modelo: String!
   color: String!
-  fechaEntrada: AWSDate
-  horaEntrada: AWSTime
-  fechaSalida: AWSDate
-  horaSalida: AWSTime
+  fechaEntrada: String!
+  fechaSalida: String!
 }
- 
