@@ -1,8 +1,10 @@
-type Cars @model @auth(rules: [{ allow: public }]) {
+type Cars @model @auth(rules: [{allow: public}]) {
   id: ID!
   placas: String!
   modelo: String!
   color: String!
   fechaEntrada: String!
   fechaSalida: String!
+  active: Boolean
 }
+ 

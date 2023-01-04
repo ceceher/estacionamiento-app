@@ -5,12 +5,6 @@
         "project": {
             "ConflictHandler": "OPTIMISTIC_CONCURRENCY",
             "ConflictDetection": "VERSION"
-        },
-        "models": {
-            "Cars": {
-                "ConflictHandler": "OPTIMISTIC_CONCURRENCY",
-                "ConflictDetection": "VERSION"
-            }
         }
     }
 }
