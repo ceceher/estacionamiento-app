@@ -17,7 +17,7 @@ type EagerCars = {
   readonly color: string;
   readonly fechaEntrada: string;
   readonly fechaSalida: string;
-  readonly active?: boolean | null;
+  readonly status?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -33,7 +33,7 @@ type LazyCars = {
   readonly color: string;
   readonly fechaEntrada: string;
   readonly fechaSalida: string;
-  readonly active?: boolean | null;
+  readonly status?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

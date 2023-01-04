@@ -18,9 +18,15 @@ export const CarsTable = () => {
     };
   });
 
-  return car.map((car) => (
-    <tr key={car.id}>
-      <td>{car.id}</td>
+  const data = []
+    .concat(car)
+    .sort((a, b) => (a.fechaEntrada < b.fechaEntrada ? 1 : -1));
+
+  return data.map((car) => (
+    <tr
+      key={car.id}
+      className={car.status === "ACTIVE" ? "activetr" : "inactivetr"}
+    >
       <td>{car.placas}</td>
       <td>{car.modelo}</td>
       <td>{car.color}</td>

@@ -45,10 +45,10 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "active": {
-                    "name": "active",
+                "status": {
+                    "name": "status",
                     "isArray": false,
-                    "type": "Boolean",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -98,5 +98,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.3.2",
-    "version": "42b60f8b3c148106839db977f8cfd971"
+    "version": "f3d9ae3c19089959475e346e78a3ddbd"
 };

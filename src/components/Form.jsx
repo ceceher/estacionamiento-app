@@ -53,6 +53,7 @@ class Form extends Component {
         color: color,
         fechaEntrada: moment().format("hh:mm:ss DD-MM-YYYY"),
         fechaSalida: "",
+        status: "ACTIVE",
       })
     );
 

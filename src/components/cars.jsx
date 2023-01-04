@@ -8,7 +8,6 @@ class TableCars extends Component {
         <table>
           <thead>
             <tr>
-              <th>ID</th>
               <th>Placas</th>
               <th>Modelo</th>
               <th>Color</th>

@@ -7,6 +7,7 @@ import Form from "./components/Form";
 import PayCost from "./components/payCost";
 import { DataStore } from "aws-amplify";
 import TableCars from "./components/cars.jsx";
+import SelectedCar from "./components/selectedCar.jsx";
 
 Amplify.configure(awsconfig);
 DataStore.configure(awsconfig);
@@ -18,6 +19,7 @@ class App extends Component {
         <NavBar />
         <main>
           <Form />
+          <SelectedCar />
           <PayCost />
           <TableCars />
         </main>

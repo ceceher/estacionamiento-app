@@ -74,6 +74,18 @@
   padding-top: 10px;
 }
 
+.selected {
+  background-color: #d9d9d9;
+  border-radius: 14px;
+  width: 225px;
+  height: 269.2px;
+  text-align: center;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin: 10px;
+  padding-top: 10px;
+}
+
 .pay-block {
   border-radius: 14px;
   width: 225px;
@@ -131,6 +143,14 @@ td {
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.activetr {
+  color: black;
+}
+
+.inactivetr {
+  color: #756981;
 }
 
 .wrapper {
