@@ -44,14 +44,14 @@ class Form extends Component {
     e.preventDefault();
     const { placas, modelo, color } = this.state;
 
-    console.log(placas, modelo, color, moment().format("YYYY-MM-DD hh:mm:ss"));
+    console.log(placas, modelo, color, moment().format("hh:mm:ss DD-MM-YYYY "));
 
     await DataStore.save(
       new Cars({
         placas: placas,
         modelo: modelo,
         color: color,
-        fechaEntrada: moment().format("YYYY-MM-DD hh:mm:ss"),
+        fechaEntrada: moment().format("hh:mm:ss DD-MM-YYYY"),
         fechaSalida: "",
       })
     );
