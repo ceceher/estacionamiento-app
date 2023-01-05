@@ -4,7 +4,6 @@ import awsconfig from "../src/aws-exports.js";
 import "./styles.css";
 import NavBar from "./components/navbar";
 import Form from "./components/Form";
-import PayCost from "./components/payCost";
 import { DataStore } from "aws-amplify";
 import TableCars from "./components/cars.jsx";
 import SelectedCar from "./components/selectedCar.jsx";
@@ -20,7 +19,6 @@ class App extends Component {
         <div class="wrapper">
           <Form />
           <SelectedCar />
-          <PayCost />
         </div>
         <TableCars class="cars-w" />
       </React.Fragment>
