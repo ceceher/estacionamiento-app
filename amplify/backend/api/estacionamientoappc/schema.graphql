@@ -6,5 +6,6 @@ type Cars @model @auth(rules: [{allow: public}]) {
   fechaEntrada: String!
   fechaSalida: String!
   status: String
+  costo: Float
 }
  

@@ -1,3 +1,14 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.cars-w {
+  grid-column: 1 / -1;
+  align-self: center;
+}
+
 .NavBar {
   background-color: #4f3b60;
   display: block;
@@ -17,11 +28,10 @@
   background-color: #d9d9d9;
   border-radius: 14px;
   width: fit-content;
+  height: 270px;
   text-align: center;
-  display: block;
   padding-bottom: 10px;
   margin: 10px;
-  margin-left: 20px;
 }
 
 .input {
@@ -48,6 +58,7 @@
   border-style: hidden;
   padding: 10px;
   margin: 10px;
+  align-self: center;
 }
 .btn-Pay {
   background-color: #754a9a;
@@ -68,19 +79,17 @@
   width: 225px;
   height: 100px;
   text-align: center;
-  display: block;
   padding-bottom: 10px;
-  margin: 10px;
   padding-top: 10px;
+  margin: 10px;
 }
 
 .selected {
   background-color: #d9d9d9;
   border-radius: 14px;
   width: 225px;
-  height: 269.2px;
+  height: 270px;
   text-align: center;
-  display: inline-block;
   padding-bottom: 10px;
   margin: 10px;
   padding-top: 10px;
@@ -91,14 +100,9 @@
   width: 225px;
   height: 100px;
   text-align: center;
-  display: block;
-  margin: 10px;
-  padding-top: 10px;
-}
-
-.payCost-block {
   display: inline-block;
   margin: 10px;
+  padding-top: 10px;
 }
 
 .cost-value {
@@ -108,24 +112,20 @@
 
 .cars {
   background-color: #d9d9d9;
-  width: fit-content;
   margin: 15px;
-  display: block;
   padding: 0px;
-  float: left;
-  display: table;
   border-radius: 5px;
-  border-collapse: collapse;
+  table-layout: auto;
 }
 
 th {
   text-align: center;
   padding: 10px;
   background-color: #907f9e;
-  table-layout: auto;
   margin: 0px;
   margin-left: 0px;
   margin-right: 0px;
+  width: 20%;
 }
 
 tr {
@@ -151,38 +151,4 @@ tr:nth-child(even) {
 
 .inactivetr {
   color: #756981;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-areas: repeat(4, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.header-wrap {
-  grid-column: 1 / 4;
-  grid-row: 1;
-}
-
-.form-wrap {
-  grid-column: 2 / 2;
-  grid-row: 2 / 2;
-  align-self: center;
-  justify-self: center;
-}
-
-.cost-wrap {
-  grid-column: 2 / 4;
-  grid-row: 2 / 2;
-  align-self: center;
-  justify-self: center;
-  display: inline-block;
-}
-
-.table-wrap {
-  grid-column: 1 /5;
-  grid-row: 3;
-  align-self: center;
-  justify-self: center;
 }

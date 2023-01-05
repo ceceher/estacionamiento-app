@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class SelectedCar extends Component {
   state = {};
+
   render() {
     return (
       <div className="selected">

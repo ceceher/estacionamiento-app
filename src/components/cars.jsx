@@ -4,7 +4,7 @@ import { CarsTable } from "./carData";
 class TableCars extends Component {
   render() {
     return (
-      <div className="cars table-wrap">
+      <div className="cars">
         <table>
           <thead>
             <tr>

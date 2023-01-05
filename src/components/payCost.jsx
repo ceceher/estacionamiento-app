@@ -6,7 +6,7 @@ class PayCost extends Component {
   state = {};
   render() {
     return (
-      <div className="payCost-block cost-wrap">
+      <div>
         <CostCard />
         <Pay />
       </div>

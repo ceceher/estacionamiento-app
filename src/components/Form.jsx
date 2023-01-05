@@ -62,7 +62,7 @@ class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleRegister} className="form form-wrap">
+      <form onSubmit={this.handleRegister} className="form">
         <Input
           ref={this.inputElement}
           type={"text"}

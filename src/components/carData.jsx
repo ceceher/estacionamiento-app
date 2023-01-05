@@ -26,6 +26,7 @@ export const CarsTable = () => {
     <tr
       key={car.id}
       className={car.status === "ACTIVE" ? "activetr" : "inactivetr"}
+      data-item={car}
     >
       <td>{car.placas}</td>
       <td>{car.modelo}</td>

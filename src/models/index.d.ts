@@ -18,6 +18,7 @@ type EagerCars = {
   readonly fechaEntrada: string;
   readonly fechaSalida: string;
   readonly status?: string | null;
+  readonly costo?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -34,6 +35,7 @@ type LazyCars = {
   readonly fechaEntrada: string;
   readonly fechaSalida: string;
   readonly status?: string | null;
+  readonly costo?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

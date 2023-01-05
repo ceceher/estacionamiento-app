@@ -4,7 +4,7 @@ import React, { Component } from "react";
 const NavBar = () => {
   return (
     <nav>
-      <a className="NavBar header-wrap">Estacionamiento</a>
+      <a className="NavBar">Estacionamiento</a>
     </nav>
   );
 };

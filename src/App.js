@@ -17,12 +17,12 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar />
-        <main>
+        <div class="wrapper">
           <Form />
           <SelectedCar />
           <PayCost />
-          <TableCars />
-        </main>
+        </div>
+        <TableCars class="cars-w" />
       </React.Fragment>
     );
   }
