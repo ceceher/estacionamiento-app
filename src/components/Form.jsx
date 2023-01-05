@@ -44,7 +44,7 @@ class Form extends Component {
     e.preventDefault();
     const { placas, modelo, color } = this.state;
 
-    console.log(placas, modelo, color, moment().format("hh:mm:ss DD-MM-YYYY "));
+    console.log(placas, modelo, color, moment().format("hh:mm:ss DD-MM-YYYY"));
 
     await DataStore.save(
       new Cars({

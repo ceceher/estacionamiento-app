@@ -12,7 +12,6 @@ class SelectedCar extends Component {
         <label className="label"> Color</label> <br />
         <label className="label"> Entrada</label>
         <br />
-        <label className="label">Costo</label>
         <br />
         <label className="cost-value">$20.00</label>
         <br />

@@ -7,6 +7,7 @@ import Form from "./components/Form";
 import { DataStore } from "aws-amplify";
 import TableCars from "./components/cars.jsx";
 import SelectedCar from "./components/selectedCar.jsx";
+import Clock from "./components/todayDate.jsx";
 
 Amplify.configure(awsconfig);
 DataStore.configure(awsconfig);
@@ -16,11 +17,12 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar />
-        <div class="wrapper">
+        <div className="wrapper">
           <Form />
+          <Clock />
+          <TableCars className="cars-w" />
           <SelectedCar />
         </div>
-        <TableCars class="cars-w" />
       </React.Fragment>
     );
   }
