@@ -63,27 +63,25 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleRegister} className="form">
+        <label className="titlelabel">Nuevo auto</label>
         <Input
           ref={this.inputElement}
-          type={"text"}
           name={"placas"}
-          label={"placas"}
+          label={"Placas"}
           onChange={this.handleChange}
           value={this.state.placas}
         />
         <Input
           ref={this.inputElement}
-          type={"text"}
           name={"modelo"}
-          label={"modelo"}
+          label={"Modelo"}
           onChange={this.handleChange}
           value={this.state.modelo}
         />
         <Input
           ref={this.inputElement}
-          type={"text"}
           name={"color"}
-          label={"color"}
+          label={"Color"}
           onChange={this.handleChange}
           value={this.state.color}
         />

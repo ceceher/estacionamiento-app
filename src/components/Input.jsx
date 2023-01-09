@@ -12,7 +12,7 @@ export default class Input extends Component {
   render() {
     return (
       <div>
-        <label className="label">{this.props.label}</label> <br />
+        <label className="label">{this.props.label}</label>
         <input {...this.props} className="input" />
       </div>
     );

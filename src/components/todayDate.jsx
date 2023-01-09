@@ -8,11 +8,11 @@ export default function Clock() {
   }, []);
   return (
     <div className="clock">
-      <span className="clocklabel">
+      <span className="timelabel"> {moment(dateState).format("hh:mm")}</span>
+      <br />
+      <span className="datelabel">
         {moment(dateState).format("DD-MM-YYYY")}
       </span>
-      <br />
-      <span className="clocklabel"> {moment(dateState).format("hh:mm")}</span>
     </div>
   );
 }
