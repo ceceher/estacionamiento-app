@@ -34,15 +34,15 @@ export const schema = {
                 "fechaEntrada": {
                     "name": "fechaEntrada",
                     "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
                     "attributes": []
                 },
                 "fechaSalida": {
                     "name": "fechaSalida",
                     "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
                     "attributes": []
                 },
                 "status": {
@@ -105,5 +105,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.3.2",
-    "version": "32e186e5f15845a05a3be4f7ae2c4d61"
+    "version": "91b35180f223bd10b5ee12e56a44d8ad"
 };

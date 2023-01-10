@@ -6,10 +6,12 @@ class TablePanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buscar: "",
+      search: "",
+      today: true,
     };
     this.inputElement = React.createRef();
     this.handleChange = this.handleChange.bind(this);
+    this.handleToday = this.handleToday.bind(this);
   }
 
   handleChange(event) {
@@ -19,26 +21,28 @@ class TablePanel extends Component {
     this.setState({
       [name]: value.toUpperCase(),
     });
+    console.log(this.state);
   }
 
-  handleSearch() {
-    const search = this.state.buscar.value;
-    return search;
+  handleToday() {
+    this.setState((prevState) => ({ today: !prevState.today }));
   }
 
   render() {
     return (
       <div className="tablePanel">
-        <button className="btn"> Mostrar Todo</button>
-        <button className="btn"> Mostrar Hoy</button>
+        <button className="btn" onClick={this.handleToday}>
+          Mostrar {this.state.today && "Todo"}
+          {!this.state.today && "Hoy"}
+        </button>
         <Input
           ref={this.inputElement}
-          name={"buscar"}
+          name={"search"}
           label={"Buscar"}
           onChange={this.handleChange}
-          value={this.state.buscar}
+          value={this.state.search}
         />
-        <TableCars />
+        <TableCars today={this.state.today} search={this.state.search} />
       </div>
     );
   }

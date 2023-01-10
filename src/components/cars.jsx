@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CarsTable } from "./carData";
+import { CarData } from "./carData";
 
 class TableCars extends Component {
   render() {
@@ -15,7 +15,7 @@ class TableCars extends Component {
           </tr>
         </thead>
         <tbody>
-          <CarsTable />
+          <CarData today={this.props.today} search={this.props.search} />
         </tbody>
       </table>
     );

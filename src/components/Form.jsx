@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import Input from "./Input";
 import { DataStore } from "@aws-amplify/datastore";
 import { Cars } from "../models";
-import moment from "moment";
-
-// const carAdd = async (values) => await DataStore.save(new Cars({ ...values }));
 
 class Form extends Component {
   constructor(props) {
@@ -44,15 +41,12 @@ class Form extends Component {
     e.preventDefault();
     const { placas, modelo, color } = this.state;
 
-    console.log(placas, modelo, color, moment().format("hh:mm:ss DD-MM-YYYY"));
-
     await DataStore.save(
       new Cars({
         placas: placas,
         modelo: modelo,
         color: color,
-        fechaEntrada: moment().format("hh:mm:ss DD-MM-YYYY"),
-        fechaSalida: "",
+        fechaEntrada: new Date().toISOString(),
         status: "ACTIVE",
       })
     );
@@ -63,7 +57,7 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleRegister} className="form">
-        <label className="titlelabel">Nuevo auto</label>
+        <label className="titlelabel">Nuevo auto</label> <br />
         <Input
           ref={this.inputElement}
           name={"placas"}
@@ -85,10 +79,10 @@ class Form extends Component {
           onChange={this.handleChange}
           value={this.state.color}
         />
-
         <button type="submit" className="btn">
           Registrar
         </button>
+        <br />
       </form>
     );
   }

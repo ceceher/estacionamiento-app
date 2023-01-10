@@ -15,8 +15,8 @@ type EagerCars = {
   readonly placas: string;
   readonly modelo: string;
   readonly color: string;
-  readonly fechaEntrada: string;
-  readonly fechaSalida: string;
+  readonly fechaEntrada?: string | null;
+  readonly fechaSalida?: string | null;
   readonly status?: string | null;
   readonly costo?: number | null;
   readonly createdAt?: string | null;
@@ -32,8 +32,8 @@ type LazyCars = {
   readonly placas: string;
   readonly modelo: string;
   readonly color: string;
-  readonly fechaEntrada: string;
-  readonly fechaSalida: string;
+  readonly fechaEntrada?: string | null;
+  readonly fechaSalida?: string | null;
   readonly status?: string | null;
   readonly costo?: number | null;
   readonly createdAt?: string | null;

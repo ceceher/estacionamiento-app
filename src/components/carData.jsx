@@ -3,11 +3,8 @@ import { DataStore } from "aws-amplify";
 import { Cars } from "../models";
 import moment, { parseTwoDigitYear } from "moment";
 
-export const CarsTable = () => {
+export const CarData = ({ search, today }) => {
   const [car, updateCars] = useState([]);
-
-  const [search, setSearch] = useState([]);
-  const [today, setToday] = useState([]);
 
   const fetchCars = async () => {
     const car = await DataStore.query(Cars);
@@ -22,10 +19,26 @@ export const CarsTable = () => {
     };
   });
 
-  const data = []
-    .concat(car)
-    .sort((a, b) => (a.fechaEntrada < b.fechaEntrada ? 1 : -1));
-  //.filter(car.fechaEntrada >= moment().format("DD-MM-YYYY"));
+  const data = today
+    ? []
+        .concat(car)
+        .sort((a, b) => (a.fechaEntrada < b.fechaEntrada ? 1 : -1))
+        .filter((a) => moment().startOf("day").isBefore(a.fechaEntrada))
+        .filter(
+          (a) =>
+            a.placas.includes(search) ||
+            a.modelo.includes(search) ||
+            a.color.includes(search)
+        )
+    : []
+        .concat(car)
+        .sort((a, b) => (a.fechaEntrada < b.fechaEntrada ? 1 : -1))
+        .filter(
+          (a) =>
+            a.placas.includes(search) ||
+            a.modelo.includes(search) ||
+            a.color.includes(search)
+        );
 
   return data.map((car) => (
     <tr
@@ -36,7 +49,7 @@ export const CarsTable = () => {
       <td>{car.placas}</td>
       <td>{car.modelo}</td>
       <td>{car.color}</td>
-      <td>{car.fechaEntrada}</td>
+      <td>{moment(car.fechaEntrada).format("hh:mm DD-MM-YYYY")}</td>
       <td>{car.fechaSalida}</td>
     </tr>
   ));

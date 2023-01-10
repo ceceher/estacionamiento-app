@@ -13,6 +13,8 @@ export const createCars = /* GraphQL */ `
       color
       fechaEntrada
       fechaSalida
+      status
+      costo
       createdAt
       updatedAt
       _version
@@ -33,6 +35,8 @@ export const updateCars = /* GraphQL */ `
       color
       fechaEntrada
       fechaSalida
+      status
+      costo
       createdAt
       updatedAt
       _version
@@ -53,6 +57,8 @@ export const deleteCars = /* GraphQL */ `
       color
       fechaEntrada
       fechaSalida
+      status
+      costo
       createdAt
       updatedAt
       _version

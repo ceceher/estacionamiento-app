@@ -10,6 +10,8 @@ export const getCars = /* GraphQL */ `
       color
       fechaEntrada
       fechaSalida
+      status
+      costo
       createdAt
       updatedAt
       _version
@@ -32,6 +34,8 @@ export const listCars = /* GraphQL */ `
         color
         fechaEntrada
         fechaSalida
+        status
+        costo
         createdAt
         updatedAt
         _version
@@ -63,6 +67,8 @@ export const syncCars = /* GraphQL */ `
         color
         fechaEntrada
         fechaSalida
+        status
+        costo
         createdAt
         updatedAt
         _version
